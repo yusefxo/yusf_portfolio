@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yousef Hamoud</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <canvas id="stars-bg"></canvas>
+
+  <header>
+    <div class="container">
+      <h1 class="logo">About Yousef</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="section home">
+    <div class="container fade-in">
+      <h2>Hello, I'm Yousef</h2>
+      <p>A Passionate programmer</p>
+      <a href="#projects" class="btn">See My Work</a>
+    </div>
+  </section>
+
+  <section id="about" class="section about fade-in">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm a developer who loves creating beautiful and functional websites.
+        I specialize in front-end technologies like HTML, CSS, and JavaScript.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects fade-in">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Project One</h3>
+          <p>Brief description of the project goes here.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project Two</h3>
+          <p>Brief description of the project goes here.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project Three</h3>
+          <p>Brief description of the project goes here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact fade-in">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form id="contact-form" action="https://formspree.io/f/mpwllqey" method="POST">
+        <input type="hidden" name="_redirect" value="#success" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div id="success" style="display: none; margin-top: 20px;">
+  <p style="color: lightgreen;">✅ Your message has been sent successfully!</p>
+</div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Yousef. All rights reserved.</p>
+  </footer>
+  <script>
+  // If redirected to #success, show success message
+  if (window.location.hash === "#success") {
+    const msg = document.getElementById("success");
+    if (msg) msg.style.display = "block";
+    window.scrollTo({ top: msg.offsetTop - 100, behavior: "smooth" });
+    history.replaceState("", document.title, window.location.pathname + window.location.search);
+  }
+</script>
+
+</body>
+</html>
